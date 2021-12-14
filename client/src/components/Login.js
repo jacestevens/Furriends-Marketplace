@@ -3,6 +3,8 @@ import axios from 'axios'
 import React, { useState, useContext } from 'react'
 import {useNavigate} from "react-router-dom"
 import { GlobalContext } from '../contexts/GlobalContext'
+import Navigation from './Navigation'
+
 
 
 
@@ -44,8 +46,9 @@ const Login = () => {
 
     return (
         <div>
-            
-            <Paper elevation="2" className="p-10 mx-auto my-8 w-5/12">
+            <div className='pt-5'>
+        <Navigation />
+            <Paper elevation="2" className="p-10 mx-auto mt-8 mb-96 w-5/12">
                 <form onSubmit={login} className="flex flex-col gap-4">
                 <TextField id="outlined-basic" label="Email" variant="outlined" value={email} onChange={e => setEmail(e.target.value)}/>
                 <TextField id="outlined-basic" label="Password" variant="outlined" type="password" value={password} onChange={e => setPassword(e.target.value)}/>
@@ -53,6 +56,7 @@ const Login = () => {
                 </form>
             </Paper>
         </div>
+    </div>
     )
 }
 

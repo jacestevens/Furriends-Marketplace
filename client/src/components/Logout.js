@@ -18,6 +18,7 @@ const Logout = () => {
         axios
             .post(
                 "http://localhost:8000/api/users/logout",
+                {},
                 {
                     withCredentials: true,
                 },

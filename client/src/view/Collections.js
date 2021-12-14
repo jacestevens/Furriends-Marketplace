@@ -5,10 +5,12 @@ import {Link} from "react-router-dom"
 import { GlobalContext } from '../contexts/GlobalContext'
 import axios from 'axios'
 import SearchBar from '../components/SearchBar'
+import Navigation from '../components/Navigation'
 
 const Collections = () => {
 
     const {productList, setProductList, profileInfo} = useContext(GlobalContext)
+    const [filteredList, setfilteredList] = useState('')
     
     useEffect(() => {
         axios.get("http://localhost:8000/api/Products")
@@ -20,11 +22,25 @@ const Collections = () => {
             .catch((err) => {
                 console.log(err)
             })
-    }, [setProductList])
+    }, [])
 
+    
+    const onSearchChange = (e) =>{
+
+        setfilteredList(e.target.value)
+        
+    }
+    
+
+   let newList = productList.filter((product ) => { 
+    return product.productName.toLowerCase().includes(filteredList.toLowerCase());
+   
+   })
    
     return (
-        <div className="flex flex-row gap-7 w-11/12 my-1 mx-auto">
+        <div className='pt-5'>
+        <Navigation />
+        <div className="flex flex-row gap-7 w-11/12 my-5 mx-auto">
                 <Paper 
                 
                 className="
@@ -41,12 +57,12 @@ const Collections = () => {
                         <li><Typography variant="h6">Dogs</Typography></li>
                         <li><Typography variant="h6">Cats</Typography></li>
                         <li><Typography variant="h6"><Link to="Testing">Other</Link></Typography></li>
-                        <SearchBar />
+                        <SearchBar  onSearchChange={onSearchChange} />
                     </ul>
                 </Paper>
                 <div className="grid grid-cols-2 gap-5">
                     {
-                    productList? productList.map((product, i) => {
+                    newList? newList.map((product, i) => {
                         return(
                             <div key={product._id}>
                                 <Card 
@@ -88,6 +104,7 @@ const Collections = () => {
                     }) : null
                     }
                 </div>
+        </div>
         </div>
     )
 }

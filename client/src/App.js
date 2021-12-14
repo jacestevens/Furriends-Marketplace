@@ -16,6 +16,7 @@ import Register from './components/Register';
 import { GlobalContext } from './contexts/GlobalContext';
 import AdminProducts from './admin/AdminProducts';
 import UserProfiles from './view/UserProfiles';
+import Footer from './components/Footer';
 
 
 function App() {
@@ -26,11 +27,12 @@ function App() {
   const [userInfo, setuserInfo] = useState("")
   const [userProducts, setUserProducts] = useState([])
   const [profileInfo, setProfileInfo] = useState([])
+  
 
   return ( 
     <div > 
       <GlobalContext.Provider value={{productList, setProductList, userId, setuserId, userInfo, setuserInfo, userProducts, setUserProducts, profileInfo, setProfileInfo }}>
-        <Navigation />
+
         <Routes>
                   <Route path="/" element={<Home/>} />
                   <Route path="/Collections/*" element={<Collections />}>
@@ -47,6 +49,7 @@ function App() {
                   {/* <Route path="/register" element={<AdminProducts />} /> */}
                   <Route path="/user/:id" element={<UserProfiles />}/>
         </Routes>
+        <Footer />
       </GlobalContext.Provider>
     </div>
   );

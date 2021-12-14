@@ -5,7 +5,7 @@ import {Link} from "react-router-dom"
 // import LoginIcon from '@mui/icons-material/Login';
 import Logout from './Logout'
 import { GlobalContext } from '../contexts/GlobalContext'
-
+import Logo from '../assets/Asset-1-01.png'
 
 
 
@@ -20,19 +20,19 @@ const Navigation = () => {
 
 
     return (
-        <div className="flex flex-row w-11/12 mt-7 mx-auto " >
+        <div className="flex flex-row w-11/12 mx-auto " >
             <Paper elevation = {2} className="w-full">
                 <div className="flex flex-row justify-evenly items-center" >
                     <div>
                         <Link to="/">
-                            Maupets
+                            <img src={Logo} alt="" style={{height: 100, marginBottom: 2}}/>
                         </Link>
                     </div>
                     <div className="flex justify-evenly w-6/12 sm:invisible md:visible">
                         <Link to="/Collections">All Products</Link>
-                        <Link to="/beds-caves">Dog Essentials</Link>
-                        <Link to="/cat-scratcher">Cat Essentials</Link>
-                        <Link to="/cat-trees">Other</Link>
+                        <Link to="/dogs">Dog Essentials</Link>
+                        <Link to="/cat">Cat Essentials</Link>
+                        <Link to="/other-pets">Other</Link>
                     </div>
                     <div>
                     <Box sx={{ display: 'flex', alignItems: 'flex-end', padding: '10px'}}>

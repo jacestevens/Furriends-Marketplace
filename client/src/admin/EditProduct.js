@@ -10,7 +10,7 @@ import DeleteButton from './DeleteButton'
 const EditProduct = () => {
 
     const {id} = useParams()
-    const [EditedProduct, setEditedProduct] = useState({})
+    // const [editProduct, seteditProduct] = useState({})
     const navigate = useNavigate()
     const [editProduct, setEditProduct] = useState({
         productName: "",
@@ -27,7 +27,7 @@ const EditProduct = () => {
         axios.get(`http://localhost:8000/api/Product/${id}`)
             .then((res) => {
                 console.log(res.data)    
-                setEditedProduct(res.data)
+                setEditProduct(res.data)
             })
             .catch((err) => console.log(err))
     }, [])
@@ -53,7 +53,7 @@ const EditProduct = () => {
         <div className="flex flex-row items-center gap-5 p-10">
             <div>
                 
-                            <div key={EditedProduct._id}>
+                            <div key={editProduct._id}>
                                 <Card 
                                 sx={{
                                     maxWidth: 500
@@ -61,11 +61,11 @@ const EditProduct = () => {
                                 elevation = {5}
                                 >
                                 <CardActionArea>
-                                <Link to={`/Product/${EditedProduct._id}`}>
+                                <Link to={`/Product/${editProduct._id}`}>
                                 <CardMedia
                                     component="img"
                                     height="200"
-                                    image={EditedProduct.productPhoto}
+                                    image={editProduct.productPhoto}
                                     alt="modern-cat-furniture"
                                 />
                                 </Link>
@@ -73,14 +73,14 @@ const EditProduct = () => {
                                 <CardContent className="flex flex-row justify-around items-center h-auto">
                                     <div>
                                     <Typography variant="h5">
-                                        {EditedProduct.productName}
+                                        {editProduct.productName}
                                     </Typography>
                                     <Typography variant="h5">
-                                        {EditedProduct.productPrice}
+                                        {editProduct.productPrice}
                                     </Typography>
                                     </div>
                                     <CardActions className="flex flex-col gap-1 items-center">
-                                        <DeleteButton productId={EditedProduct._id} />
+                                        <DeleteButton productId={editProduct._id} />  
                                         
                                     </CardActions> 
                                 </CardContent>

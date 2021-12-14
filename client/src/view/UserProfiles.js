@@ -3,6 +3,8 @@ import React, {useState, useEffect, useContext } from 'react'
 import { GlobalContext } from '../contexts/GlobalContext'
 import { useParams } from 'react-router-dom'
 import { Paper, Typography, CardActions, CardContent, Button, CardActionArea, Card, CardMedia, Avatar } from '@mui/material'
+import Navigation from '../components/Navigation'
+
 
 const UserProfiles = () => {
 
@@ -21,6 +23,8 @@ const UserProfiles = () => {
     const avatarInitials = profileUsername.charAt(0)
     
     return (
+        <div className='pt-5'>
+        <Navigation />
 
         <div className="flex flex-row gap-5 mx-auto my-5 w-11/12">
            <div className="flex flex-col gap-5 w-3/12">
@@ -70,6 +74,7 @@ const UserProfiles = () => {
                 }) : null
             }
                 </Paper>
+           </div>
            </div>
            
       

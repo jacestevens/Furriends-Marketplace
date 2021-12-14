@@ -25,11 +25,11 @@ const AllProducts = () => {
 
     return (
     
-            <div className="flex flex-wrap gap-6 ">
+            <div className="grid grid-flow-col">
                 {
                     productList? productList.map((product, i) => {
                         return(
-                            <div className="flex flex-wrap w-10/12 my-5 mx-auto">
+                            <div >
                             
                             <Card key={product._id} 
                             sx={{
@@ -57,10 +57,9 @@ const AllProducts = () => {
                                 </Typography>
                                 </div>
                                 <CardActions className="flex flex-col gap-1">
-                                    <Button variant="contained" sx={{background: "black", width: 160, padding: 1}}></Button>
+                                    <Button variant="contained" sx={{background: "black", width: 160, padding: 1}}>Add To Cart</Button>
                                 </CardActions> 
                             </CardContent>
-
                             </Card>
                             </div>
                         )
