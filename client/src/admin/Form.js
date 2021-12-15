@@ -33,13 +33,10 @@ const Form = ({submitHandler, Product, setProduct, Errors, EditProduct, setEditP
                     <FormControl >
                     <InputLabel>Product Type</InputLabel>
                      <Select
-                     
                         name="productType"
                         value={SelectDisplay}
                         onChange={onChangeHandler}
                         variant='filled'
-                        
-
                     >
                     
                         <MenuItem value='Cats'>Cats</MenuItem>

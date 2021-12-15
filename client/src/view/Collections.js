@@ -39,7 +39,7 @@ const Collections = () => {
    
     return (
         <div className='pt-5'>
-        <Navigation />
+        {/* <Navigation /> */}
         <div className="flex flex-row gap-7 w-11/12 my-5 mx-auto">
                 <Paper 
                 

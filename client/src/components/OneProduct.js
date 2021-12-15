@@ -76,8 +76,8 @@ const OneProduct = () => {
                     paddingX: 5,
                     paddingY: 2
                 }}>
-                    <div className="flex flex-col py-10 gap-4">
-                    <Typography variant="h4">Best Sellers</Typography>
+                    <div className="flex flex-col py-5 gap-4">
+                    <Typography variant="h4">Product Details</Typography>
                     <Divider />
                     <Typography variant="paragraph">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit 

@@ -12,13 +12,13 @@ const Banner = () => {
 
     return (
         <div className='banner-image'>
-            <div className='relative top-6'>
+            {/* <div className='relative top-6'>
                 <Navigation />
-            </div>
-            <div className='flex flex-col mr-48 items-end'>
+            </div> */}
+            <div className='flex flex-col items-end py-40 pr-56 '>
 
                 <div className=" flex flex-col gap-4 items-center Home-Page">
-                    <div className="flex flex-col  mt-40">
+                    <div className="flex flex-col">
                         <div className="p-10 flex flex-col items-center gap-4 ">
 
                         <Typography variant="h3" sx={{

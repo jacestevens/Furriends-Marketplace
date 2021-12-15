@@ -20,7 +20,7 @@ const Navigation = () => {
 
 
     return (
-        <div className="flex flex-row w-11/12 mx-auto " >
+        <div className="flex flex-row w-full mx-auto " >
             <Paper elevation = {2} className="w-full">
                 <div className="flex flex-row justify-evenly items-center" >
                     <div>

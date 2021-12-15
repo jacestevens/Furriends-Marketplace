@@ -32,11 +32,10 @@ function App() {
   return ( 
     <div > 
       <GlobalContext.Provider value={{productList, setProductList, userId, setuserId, userInfo, setuserInfo, userProducts, setUserProducts, profileInfo, setProfileInfo }}>
-
+        <Navigation />
         <Routes>
                   <Route path="/" element={<Home/>} />
                   <Route path="/Collections/*" element={<Collections />}>
-                    {/* <Route path="All-Products" element={<AllProducts  />} /> */}
                   </Route>
                   <Route path="/Product/:id" element={<OneProduct />}/>
                   <Route path="*" element={<ErrorPage />} />
@@ -46,7 +45,6 @@ function App() {
                   </Route>
                   <Route path="/login" element={<Login />} />
                   <Route path="/register" element={<Register />} />
-                  {/* <Route path="/register" element={<AdminProducts />} /> */}
                   <Route path="/user/:id" element={<UserProfiles />}/>
         </Routes>
         <Footer />
