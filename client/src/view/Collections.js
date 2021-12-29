@@ -6,12 +6,14 @@ import { GlobalContext } from '../contexts/GlobalContext'
 import axios from 'axios'
 import SearchBar from '../components/SearchBar'
 import Navigation from '../components/Navigation'
+import { useMediaQuery } from '@mui/material'
 
 const Collections = () => {
 
     const {productList, setProductList, profileInfo} = useContext(GlobalContext)
     const [filteredList, setfilteredList] = useState('')
-    
+    const isMobile = useMediaQuery('(min-width:600px)')
+
     useEffect(() => {
         axios.get("http://localhost:8000/api/Products")
             .then((res)=> {
@@ -39,7 +41,7 @@ const Collections = () => {
    
     return (
         <div className='pt-5'>
-        {/* <Navigation /> */}
+       { isMobile ?
         <div className="flex flex-row gap-7 w-11/12 my-5 mx-auto">
                 <Paper 
                 
@@ -70,9 +72,9 @@ const Collections = () => {
                                     maxWidth: 500
                                 }}
                                 elevation = {5}
-                                className="flex flex-col p-5 items-center"
+                                className="flex flex-col  items-center"
                                 >
-                                <CardActionArea>
+                                <CardActionArea >
                                 <Link to={`/Product/${product._id}`}>
                                 <CardMedia
                                     component="img"
@@ -104,7 +106,53 @@ const Collections = () => {
                     }) : null
                     }
                 </div>
+        </div> : 
+        <div className="flex flex-col gap-7 w-11/12 my-5 mx-auto">
+        <SearchBar  onSearchChange={onSearchChange} />
+        <div className="flex flex-wrap gap-5">
+            {
+            newList? newList.map((product, i) => {
+                return(
+                    <div key={product._id}>
+                        <Card 
+                        sx={{
+                            maxWidth: 300
+                        }}
+                        elevation = {5}
+                        className="flex flex-col items-center gap-2 pb-5"
+                        >
+                        <CardActionArea>
+                        <Link to={`/Product/${product._id}`}>
+                        <CardMedia
+                            component="img"
+                            height="200"
+                            image={product.productPhoto}
+                            alt="modern-cat-furniture"
+                            
+                        />
+                        </Link>
+                        </CardActionArea>
+                        <CardContent className="flex flex-col items-center w-full ">
+                            <div className='flex flex-row w-full justify-between'>
+                                <Typography variant="h5">
+                                    {product.productName}
+                                </Typography>
+                                <Typography variant="h5">
+                                    {product.productPrice}
+                                </Typography>
+                            </div>
+                        </CardContent>
+                       
+                            <Button variant="outlined" className='w-4/5'>Add To Cart</Button>
+                            <Link to={`/user/${product.createdBy._id}`}><Button variant="outlined"  sx={{ padding: 1, marginX: "auto"}}>More from {product.createdBy.username}</Button></Link>                        
+                        </Card>
+                    </div>
+                )
+            }) : null
+            }
         </div>
+</div>
+        }
         </div>
     )
 }

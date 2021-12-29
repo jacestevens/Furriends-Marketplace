@@ -4,12 +4,15 @@ import { ReactComponent as Asset } from '../assets/Asset-5.svg';
 import axios from 'axios'
 import { useState } from 'react'
 import Form from './Form'
+import { useMediaQuery } from '@mui/material';
 // import { Button, Typography } from '@mui/material'
 
 
 const NewProduct = () => {
 
     const navigate = useNavigate()
+    const isMobile = useMediaQuery('(min-width:600px)')
+
 
     const [newProduct, setnewProduct] = useState({
 
@@ -46,13 +49,21 @@ const NewProduct = () => {
 
 
     return (
+        <div>
+
+        {   isMobile? 
         
-        <div className="flex flex-row gap-10 items-center">
-           <Asset className="h-auto w-6/12"/>
-            <div className="flex flex-col my-3 mx-auto w-8/12">
-            <Form submitHandler = {submitHandler} Product = {newProduct} setProduct = {setnewProduct} Errors = {Errors} setErrors = {setErrors}/>
+            <div className="flex flex-row gap-10 items-center">
+            <Asset className="h-auto w-6/12"/>
+                <div className="flex flex-col my-3 mx-auto w-8/12">
+                <Form submitHandler = {submitHandler} Product = {newProduct} setProduct = {setnewProduct} Errors = {Errors} setErrors = {setErrors}/>
+                </div>
             </div>
-            
+            :
+            <div>
+                    <Form submitHandler = {submitHandler} Product = {newProduct} setProduct = {setnewProduct} Errors = {Errors} setErrors = {setErrors}/>
+            </div>
+            }
         </div>
     )
 

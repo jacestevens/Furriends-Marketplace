@@ -63,7 +63,7 @@ const Login = () => {
                 <TextField id="outlined-basic" label="Email" variant="outlined" value={email} onChange={e => setEmail(e.target.value)}/>
                 }
                 {errors ? 
-                <TextField error id="outlined-error" label="Login attempt failed!" name="email" value={password} onChange={e => setEmail(e.target.value)}/>:
+                <TextField error id="outlined-error" label="Login attempt failed!" type="password" name="email" value={password} onChange={e => setPassword(e.target.value)}/>:
                 <TextField id="outlined-basic" label="Password" variant="outlined" type="password" value={password} onChange={e => setPassword(e.target.value)}/>}
                 <Button type="submit" variant="contained">Login</Button>
                 </form>

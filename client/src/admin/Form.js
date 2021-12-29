@@ -22,9 +22,9 @@ const Form = ({submitHandler, Product, setProduct, Errors, EditProduct, setEditP
     return (
 
         <div >
-        <Paper elevation={3} className=" my-2 mx-auto text-2xl">
+        <div className=" my-2 mx-auto text-2xl">
             
-                <form className=" w-11/12 my-10 mx-auto flex flex-col justify-between gap-5 p-10" onSubmit={submitHandler}>
+                <form className=" w-11/12 my-5 mx-auto flex flex-col justify-between gap-5 p-5" onSubmit={submitHandler}>
                     <TextField id="outlined-basic" label="Product Name" variant="outlined" type="text" name="productName" value={Product.productName} onChange={onChangeHandler}/>
                     <TextField id="outlined-basic" label="Product Price" variant="outlined" type="text" name="productPrice" value={Product.productPrice}  onChange={onChangeHandler}/>
                     <TextField id="outlined-basic" label="Main Image" variant="outlined" type="text" name="productPhoto" onChange={onChangeHandler}/>
@@ -44,9 +44,9 @@ const Form = ({submitHandler, Product, setProduct, Errors, EditProduct, setEditP
                         <MenuItem value="Other">Other</MenuItem>
                     </Select>
                     </FormControl>
-                    <Button type="submit">Submit</Button>
+                    <Button variant='contained' color="warning" type="submit">Submit</Button>
                 </form>
-        </Paper>
+        </div>
         
         </div>
 

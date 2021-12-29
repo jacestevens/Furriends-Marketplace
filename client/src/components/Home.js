@@ -10,29 +10,48 @@ import Banner from './Banner'
 import BestSellers from './BestSellers'
 import { width } from '@mui/system'
 import Footer from './Footer'
+import BannerTwo from './Banner-v2'
+import { useMediaQuery } from '@mui/material'
 
 const Home = () => {    
+
+    const isMobile = useMediaQuery('(min-width:600px)')
 
     return (
         <div className='flex flex-col gap-5'>
             <div>
-                <Banner />
+                {/* <Banner /> */}
+                <BannerTwo />
                 <BestSellers />
                 
             </div>
             <div>
                 <Typography variant="h4" sx={{fontWeight: 800, textAlign: "center"}}>Shop By Category</Typography>
             </div>
-            <div className='flex flex-row w-full justify-around'>
-                <Paper className='category w-6/12 h-auto p-72'>
-                    <Typography variant="h4" sx={{fontWeight: 800, textAlign: "center"}}>Cats</Typography>
-                </Paper>
-                <Paper className='category-2 w-6/12 h-auto p-72'>
-                    <Typography variant="h4" sx={{fontWeight: 800, textAlign: "center"}}>Dogs</Typography>
-                </Paper>
+            <div className={isMobile ? 'flex flex-row w-full justify-around' : 'flex flex-col w-full justify-around gap-2'}>
+                { isMobile ? 
+                <div className='flex flex-row w-full justify-around'>
+                <Box className='category w-6/12 h-auto p-72'>
+                        <Typography variant="h4" sx={{fontWeight: 800, textAlign: "center"}}>Cats</Typography>
+                    </Box>
+                    <Box className='category-2 w-6/12 h-auto p-72'>
+                        <Typography variant="h4" sx={{fontWeight: 800, textAlign: "center"}}>Dogs</Typography>
+                    </Box> 
+                </div> 
+                :
+                <div className='flex flex-col gap-2 items-center'>
+                    <Button variant='contained' className=' w-10/12 h-auto p-72'>
+                        <Typography variant="h4" sx={{fontWeight: 800, textAlign: "center"}}>Cats</Typography>
+                    </Button>
+                    <Button variant='contained' className= 'w-10/12 h-auto p-72'>
+                        <Typography variant="h4" sx={{fontWeight: 800, textAlign: "center"}}>Dogs</Typography>
+                    </Button>
+                </div>
+
+                    }
             </div>
             <div>
-                <Paper className="flex flex-row gap-2 w-10/12 mx-auto my-5 p-16 items-center" sx={{color: "white", backgroundColor: "black"}}>
+                <Paper className={isMobile ? "flex flex-row gap-2 w-10/12 mx-auto my-5 p-16 items-center" : "invisible"} sx={{color: "white", backgroundColor: "black"}}>
                     <div>
                         <Typography variant="h4">Pawrent Architects</Typography>
                     </div>

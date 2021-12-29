@@ -40,7 +40,7 @@ const Logout = () => {
 
     return (
         <div>
-            <Button variant="outlined" onClick={logout}>Log Out</Button>
+            <Button variant="" onClick={logout}>Log Out</Button>
         </div>
     )
 }

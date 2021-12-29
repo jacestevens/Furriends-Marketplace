@@ -25,7 +25,7 @@ const AllProducts = () => {
 
     return (
     
-            <div className="grid grid-flow-col">
+            <div className="flex flex-wrap gap-3">
                 {
                     productList? productList.map((product, i) => {
                         return(

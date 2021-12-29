@@ -25,7 +25,7 @@ const OneProduct = () => {
 
     return (
         <div className='relative top-6'>
-                <Navigation />
+                {/* <Navigation /> */}
         <div className="flex flex-row gap-10 w-10/12 my-16 mx-auto">
 
             <div className="w-7/12">

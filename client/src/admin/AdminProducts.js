@@ -5,11 +5,12 @@ import { Paper, Typography, CardActions, CardContent, Button, CardActionArea, Ca
 import { Link } from 'react-router-dom'
 import { useParams } from 'react-router'
 import DeleteButton from './DeleteButton'
+import { useMediaQuery } from '@mui/material'
 
 const AdminProducts = () => {
 
     const {userProducts, setUserProducts, userId, userInfo} = useContext(GlobalContext)
-    
+    const isMobile = useMediaQuery('(min-width:600px)')
 
     useEffect(() => {
 
@@ -46,17 +47,17 @@ const AdminProducts = () => {
                                 />
                                 </Link>
                                 </CardActionArea>
-                                <CardContent className="flex flex-row justify-around items-center h-auto">
-                                    <div>
-                                    <Typography variant="h5">
-                                        {product.productName}
-                                    </Typography>
-                                    <Typography variant="h5">
-                                        {product.productPrice}
-                                    </Typography>
+                                <CardContent className={ isMobile ? "flex flex-row justify-around items-center h-auto" : "flex flex-col justify-evenly items-center h-auto"}>
+                                    <div className={ isMobile ? 'w-full' : 'w-full flex flex-row justify-between '}>
+                                        <Typography variant="h5">
+                                            {product.productName}
+                                        </Typography>
+                                        <Typography variant="h5">
+                                            {product.productPrice}
+                                        </Typography>
                                     </div>
                                     <CardActions className="flex flex-col gap-1 items-center">
-                                        <Button variant="contained" sx={{ width: 160}}><Link to={`edit-product/${product._id}`}>Edit</Link></Button>
+                                        <Button variant="contained"  sx={{ width: 160}}><Link to={`edit-product/${product._id}`}>Edit</Link></Button>
                                         <DeleteButton productId = {product._id}/>
                                     </CardActions> 
                                 </CardContent>

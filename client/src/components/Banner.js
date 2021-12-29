@@ -3,26 +3,24 @@ import { Typography, Button, Paper } from '@mui/material'
 import Navigation from './Navigation'
 import { Link } from 'react-router-dom'
 import { GlobalContext } from '../contexts/GlobalContext'
+import { useMediaQuery } from '@mui/material'
 
 const Banner = () => {
 
 
     const {userId} = useContext(GlobalContext)
-
+    const isMobile = useMediaQuery('(min-width:600px)')
 
     return (
         <div className='banner-image'>
-            {/* <div className='relative top-6'>
-                <Navigation />
-            </div> */}
-            <div className='flex flex-col items-end py-40 pr-56 '>
+            <div className='flex flex-col items-end p-36'>
 
-                <div className=" flex flex-col gap-4 items-center Home-Page">
+                <div className="flex flex-col gap-4 items-center Home-Page">
                     <div className="flex flex-col">
-                        <div className="p-10 flex flex-col items-center gap-4 ">
+                        <div className="flex flex-col justify-start items-center gap-4 ">
 
                         <Typography variant="h3" sx={{
-                            fontWeight: "900",
+                            fontWeight: "bolder",
                             color: "primary",
                         }}>Furnitures For Your Furball</Typography>
                         <Link to='/Collections'>
