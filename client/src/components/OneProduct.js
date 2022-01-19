@@ -1,16 +1,17 @@
 import axios from 'axios'
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useContext } from 'react'
 import { useParams } from 'react-router'
 import { ImageList, ImageListItem, Typography, Paper, Divider } from '@mui/material' 
 import Navigation from './Navigation'
 import Footer from './Footer'
 import BestSellers from './BestSellers'
+import {GlobalContext} from '../contexts/GlobalContext'
 
 const OneProduct = () => {
     
-    
+    const {product, setProduct} = useContext(GlobalContext)
     const {id} = useParams()
-    const [product, setProduct] = useState({})
+    
     useEffect(() => {
         axios.get(`http://localhost:8000/api/Product/${id}`)
             .then((res) => {
@@ -21,7 +22,7 @@ const OneProduct = () => {
             .catch((err)=> console.log(err))
     }, [id])
 
-    console.log("yes",product.additionalPhotos)
+   
 
     return (
         <div className='relative top-6'>
@@ -30,8 +31,10 @@ const OneProduct = () => {
 
             <div className="w-7/12">
                 { product ? 
-
-                <ImageList variant="masonry" cols={1} gap={8}>
+                
+               
+                   
+                            <ImageList variant="masonry" cols={1} gap={8}>
                     <ImageListItem>
                         <img
                         src={product.productPhoto}
@@ -52,10 +55,10 @@ const OneProduct = () => {
                         alt={product.additionalPhotos}
                         />
                     </ImageListItem>
-                    
-                    
-                    
                 </ImageList>
+                   
+                
+            
                 : null}
             </div>
             <div className="flex flex-col gap-6">
