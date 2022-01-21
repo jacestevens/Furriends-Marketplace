@@ -6,7 +6,7 @@ const dbName = "Woof";
 
 
 //If a DB by this name does NOT exist before running the first time, then this will create it!
-mongoose.connect(`mongodb://localhost/${dbName}`,{
+mongoose.connect("mongodb://127.0.0.1/" + dbName,{
       // Note: The useNewUrlParser and useUnifiedTopology are options we pass to handle deprecation warnings in our terminal.
     useNewUrlParser: true,
     useunifiedTopology: true
