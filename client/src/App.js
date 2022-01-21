@@ -17,8 +17,6 @@ import { GlobalContext } from './contexts/GlobalContext';
 import AdminProducts from './admin/AdminProducts';
 import UserProfiles from './view/UserProfiles';
 import Footer from './components/Footer';
-import {ThemeProvider} from "@mui/material"
-import {theme} from "./theme/Theme"
 
 
 function App() {
@@ -29,13 +27,11 @@ function App() {
   const [userInfo, setuserInfo] = useState("")
   const [userProducts, setUserProducts] = useState([])
   const [profileInfo, setProfileInfo] = useState([])
-  const [product, setProduct] = useState({})
   
 
   return ( 
     <div > 
-      <GlobalContext.Provider value={{product, setProduct, productList, setProductList, userId, setuserId, userInfo, setuserInfo, userProducts, setUserProducts, profileInfo, setProfileInfo }}>
-      <ThemeProvider theme={theme}> 
+      <GlobalContext.Provider value={{productList, setProductList, userId, setuserId, userInfo, setuserInfo, userProducts, setUserProducts, profileInfo, setProfileInfo }}>
         <Navigation />
         <Routes>
                   <Route path="/" element={<Home/>} />
@@ -52,7 +48,6 @@ function App() {
                   <Route path="/user/:id" element={<UserProfiles />}/>
         </Routes>
         <Footer />
-        </ThemeProvider>
       </GlobalContext.Provider>
     </div>
   );
