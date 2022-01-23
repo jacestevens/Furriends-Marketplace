@@ -31,12 +31,12 @@ const Home = () => {
             <div className={isMobile ? 'flex flex-row w-full justify-around' : 'flex flex-col w-full justify-around gap-2'}>
                 { isMobile ? 
                 <div className='flex flex-row w-full justify-around'>
-                <Box className='category w-6/12 h-auto p-72'>
-                        <Typography variant="h4" sx={{fontWeight: 800, textAlign: "center"}}>Cats</Typography>
-                    </Box>
-                    <Box className='category-2 w-6/12 h-auto p-72'>
-                        <Typography variant="h4" sx={{fontWeight: 800, textAlign: "center"}}>Dogs</Typography>
-                    </Box> 
+                <Box className='category m-5 w-6/12 h-auto p-72'>
+                    <Typography variant="h4" color="secondary" sx={{fontWeight: 800, textAlign: "center"}}>Cats</Typography>
+                </Box>
+                <Box className='category-2 m-5 w-6/12 h-auto p-72'>
+                    <Typography variant="h4" color="secondary" sx={{fontWeight: 800, textAlign: "center"}}>Dogs</Typography>
+                </Box> 
                 </div> 
                 :
                 <div className='flex flex-col gap-2 items-center'>

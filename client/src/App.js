@@ -17,6 +17,8 @@ import { GlobalContext } from './contexts/GlobalContext';
 import AdminProducts from './admin/AdminProducts';
 import UserProfiles from './view/UserProfiles';
 import Footer from './components/Footer';
+import { ThemeProvider } from '@emotion/react';
+import {theme} from './theme/MainTheme'
 
 
 function App() {
@@ -32,6 +34,7 @@ function App() {
   return ( 
     <div > 
       <GlobalContext.Provider value={{productList, setProductList, userId, setuserId, userInfo, setuserInfo, userProducts, setUserProducts, profileInfo, setProfileInfo }}>
+        <ThemeProvider theme={theme}>
         <Navigation />
         <Routes>
                   <Route path="/" element={<Home/>} />
@@ -48,6 +51,7 @@ function App() {
                   <Route path="/user/:id" element={<UserProfiles />}/>
         </Routes>
         <Footer />
+        </ThemeProvider>
       </GlobalContext.Provider>
     </div>
   );
