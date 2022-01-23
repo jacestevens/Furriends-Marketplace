@@ -69,7 +69,9 @@ const Collections = () => {
                             <div key={product._id}>
                                 <Card 
                                 sx={{
-                                    maxWidth: 500
+                                    maxWidth: 500,
+                                    paddingBottom: 3
+                                    
                                 }}
                                 elevation = {5}
                                 className="flex flex-col  items-center"
@@ -81,7 +83,7 @@ const Collections = () => {
                                     height="200"
                                     image={product.productPhoto}
                                     alt="modern-cat-furniture"
-                                    sx={{borderRadius: 3}}
+                                    sx={{}}
                                 />
                                 </Link>
                                 </CardActionArea>
