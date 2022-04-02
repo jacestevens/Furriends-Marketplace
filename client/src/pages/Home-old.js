@@ -1,16 +1,7 @@
 import React from 'react'
-// import Navigation from './Navigation'
-// import { Routes, Route, Outlet } from 'react-router'
-import AllProducts from './AllProducts'
-// import Collections from '../view/Collections'
 import { Typography, Button, Paper, Divider, Box } from '@mui/material'
-import Image from '../assets/AdobeStock_201000201.jpeg'
-import Navigation from './Navigation'
-import Banner from './Banner'
-import BestSellers from './BestSellers'
-import { width } from '@mui/system'
-import Footer from './Footer'
-import BannerTwo from './Banner-v2'
+import BestSellers from '../components/BestSellers'
+import BannerTwo from '../components/Banner-v2'
 import { useMediaQuery } from '@mui/material'
 
 const Home = () => {    

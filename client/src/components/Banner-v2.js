@@ -1,6 +1,5 @@
 import React, { useContext } from 'react'
 import { Typography, Button, Paper } from '@mui/material'
-import Navigation from './Navigation'
 import { Link } from 'react-router-dom'
 import { GlobalContext } from '../contexts/GlobalContext'
 import { useMediaQuery } from '@mui/material'

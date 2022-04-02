@@ -1,7 +1,7 @@
 import axios from 'axios'
 import React, { useState } from 'react'
 import {Paper, TextField, Button, Alert, AlertTitle, Typography} from '@mui/material'
-
+import { useMediaQuery } from '@mui/material'
 
 const Register = () => {
 
@@ -15,7 +15,7 @@ const Register = () => {
     })
     const [confirmReg, setConfirmReg] = useState("")
     const [errors, setErrors] = useState({})
-
+    const isMobile = useMediaQuery('(min-width:700px)')
     const onChangeHandler = (e) => {
 
         setUser({
@@ -55,7 +55,7 @@ const Register = () => {
                 <AlertTitle>Success!</AlertTitle>
                 {confirmReg}
             </Alert> : null}
-            <Paper  className="p-10 mx-auto my-8 w-5/12">
+            <div  className={isMobile ? "p-10 mx-auto my-8 w-5/12": "p-10 mx-auto my-8 w-screen"}>
                 <div className="mb-5">
                 <Typography variant="h2">Sign Up!</Typography>
                 <Typography variant="paragraph">It's so dog-gone easy!</Typography>
@@ -82,7 +82,7 @@ const Register = () => {
                 <Button variant="contained" type="submit" >Login</Button>
                 }
                 </form>
-            </Paper>
+            </div>
            
         </div>
     )

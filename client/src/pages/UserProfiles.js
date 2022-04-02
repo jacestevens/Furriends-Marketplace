@@ -3,7 +3,6 @@ import React, {useState, useEffect, useContext } from 'react'
 import { GlobalContext } from '../contexts/GlobalContext'
 import { useParams } from 'react-router-dom'
 import { Paper, Typography, CardActions, CardContent, Button, CardActionArea, Card, CardMedia, Avatar } from '@mui/material'
-import Navigation from '../components/Navigation'
 
 
 const UserProfiles = () => {

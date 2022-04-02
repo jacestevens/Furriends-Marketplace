@@ -1,0 +1,29 @@
+/* Animations */
+
+@keyframes identifier {
+    
+}
+
+/* Animations */
+
+
+.hero__background {
+
+    background-image: url(../assets/Banner-Image.jpeg);
+    height: 70vh;
+    background-size: cover;
+    background-position-y: 40%;
+}
+
+.hero__mobile__bg {
+
+    background-image: url(../assets/mobile-hero.jpg);
+    height: 50vh;
+    background-size: cover;
+    background-position-y: 40%;    
+
+}
+
+.hero-background-overlay {
+    
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.461) 0%, rgba(0, 0, 0, 0.009) 100%);}

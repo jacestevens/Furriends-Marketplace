@@ -1,12 +1,11 @@
 import { Paper, TextField, Avatar, Typography, Button } from '@mui/material'
 import React, { useContext, useEffect, useState } from 'react'
 import { Outlet } from 'react-router'
-// import AllProducts from '../components/AllProducts'
 import NewProduct from './NewProduct';
 import { Link } from 'react-router-dom';
 import { GlobalContext } from '../contexts/GlobalContext';
 import AdminProducts from './AdminProducts';
-import Navigation from '../components/Navigation';
+import Navigation from '../layouts/Navigation';
 import { useMediaQuery } from '@mui/material';
 
 const Admin = () => {

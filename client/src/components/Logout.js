@@ -39,8 +39,8 @@ const Logout = () => {
     };
 
     return (
-        <div>
-            <Button variant="" onClick={logout}>Log Out</Button>
+        <div className='w-full'>
+            <Button variant="contained" fullWidth onClick={logout}>Log Out</Button>
         </div>
     )
 }

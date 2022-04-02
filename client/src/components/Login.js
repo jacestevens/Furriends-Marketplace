@@ -1,10 +1,10 @@
-import { Paper, TextField, Button, Alert, AlertTitle  } from '@mui/material'
+import { Paper, TextField, Button, Alert, AlertTitle, Typography, Container  } from '@mui/material'
 import axios from 'axios'
 import React, { useState, useContext } from 'react'
 import {useNavigate} from "react-router-dom"
 import { GlobalContext } from '../contexts/GlobalContext'
-import Navigation from './Navigation'
-
+import Navigation from '../layouts/Navigation'
+import { useMediaQuery } from '@mui/material'
 
 
 
@@ -15,6 +15,7 @@ const Login = () => {
     const [password, setPassword] = useState("")
     const [errors, setErrors] = useState("")
     const { setuserInfo, setuserId} = useContext(GlobalContext)
+    const isMobile = useMediaQuery('(min-width:700px)')
 
     const login = (e) => {
 
@@ -47,10 +48,11 @@ const Login = () => {
 
     return (
         <div>
-            <div className='pt-5'>
-            {/* <Navigation /> */}
-            <Paper elevation={3} className="p-10 mx-auto mt-8 mb-96 w-5/12">
-                <form onSubmit={login} className="flex flex-col gap-4">
+            <div className='pt-5 h-screen'>
+
+            <Paper elevation={3} className={isMobile ? "p-10 mx-auto mt-8 mb-96 w-9/12" : "h-auto mt-10 mx-3 p-8" }>
+                <Typography variant='h4'>Login</Typography>
+                <form onSubmit={login} className="flex flex-col gap-4 mt-5">
                 {errors ? 
                 <div className='flex flex-col'> 
                 <Alert severity="error" className="my-5">

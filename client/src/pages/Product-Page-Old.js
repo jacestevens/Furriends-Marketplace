@@ -2,9 +2,7 @@ import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router'
 import { ImageList, ImageListItem, Typography, Paper, Divider } from '@mui/material' 
-import Navigation from './Navigation'
-import Footer from './Footer'
-import BestSellers from './BestSellers'
+import BestSellers from '../components/BestSellers'
 
 const OneProduct = () => {
     
@@ -99,10 +97,7 @@ const OneProduct = () => {
                 </Paper>
             </div>
         </div>
-        <Paper elevation={10} className='my-10 '>
-
-        <BestSellers />
-        </Paper>
+        
         </div>
     )
 }

@@ -13,15 +13,8 @@ const ProductSchema = new mongoose.Schema({
     }, 
 
     
-    additionalPhotos: {
-
-        imgOne: String, 
-        imgTwo: String,
-        imgThree: String,
-        imgFour: String,
-        imgFive: String
-
-    },
+    additionalPhotos: [String],
+    additionalPhotosTwo: [String],
 
     productPrice: {
         type: String, 

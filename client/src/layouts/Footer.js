@@ -27,7 +27,7 @@ const Footer = () => {
                     </div>
                     <div className="col item social"><i className="icon ion-social-facebook"></i><i className="icon ion-social-twitter"></i><i className="icon ion-social-snapchat"></i><i className="icon ion-social-instagram"></i></div>
                 </div>
-                <p className="text-center">Company Name © 2018</p>
+                <p className="text-center">Furriend's Marketplace © 2018</p>
             </div>
         </footer>
         </div>

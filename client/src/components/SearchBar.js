@@ -24,7 +24,7 @@ const SearchBar = ({onSearchChange}) => {
 
 
         <div>
-            <TextField id="outlined-basic" label="Search Products" variant="outlined" type="search" name="keyFeatures"  onChange={onSearchChange} />
+            <TextField id="outlined-basic" label="Search Products" variant="standard" type="search" name="keyFeatures"  onChange={onSearchChange} />
         </div>
     )
 }

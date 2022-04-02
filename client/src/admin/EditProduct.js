@@ -13,9 +13,12 @@ const EditProduct = () => {
     // const [editProduct, seteditProduct] = useState({})
     const navigate = useNavigate()
     const [editProduct, setEditProduct] = useState({
+
+        
         productName: "",
         productPhoto: "",
         additionalPhotos: "",
+        additionalPhotosTwo: "",
         productPrice: "",
         productDescription: "",
         productType: "",
@@ -30,7 +33,7 @@ const EditProduct = () => {
                 setEditProduct(res.data)
             })
             .catch((err) => console.log(err))
-    }, [])
+    }, [`${id}`])
     
     const submitHandler = (e) => { 
 

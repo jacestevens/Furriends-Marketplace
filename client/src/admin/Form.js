@@ -29,6 +29,7 @@ const Form = ({submitHandler, Product, setProduct, Errors, EditProduct, setEditP
                     <TextField id="outlined-basic" label="Product Price" variant="outlined" type="text" name="productPrice" value={Product.productPrice}  onChange={onChangeHandler}/>
                     <TextField id="outlined-basic" label="Main Image" variant="outlined" type="text" name="productPhoto" onChange={onChangeHandler}/>
                     <TextField id="outlined-basic" label="Additional Photos" variant="outlined" type="text" name="additionalPhotos" onChange={onChangeHandler}/>
+                    <TextField id="outlined-basic" label="Additional Photos" variant="outlined" type="text" name="additionalPhotosTwo" onChange={onChangeHandler}/>
                     <TextField id="outlined-basic" label="Product Description" variant="outlined" type="text" name="productDescription" rows={5}  value={Product.productDescription} onChange={onChangeHandler}/>
                     <TextField id="outlined-basic" label="Key Features" variant="outlined" type="text" name="keyFeatures" value={Product.keyFeatures}   onChange={onChangeHandler}/>
                     <FormControl >
