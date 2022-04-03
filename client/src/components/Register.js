@@ -2,6 +2,7 @@ import axios from 'axios'
 import React, { useState } from 'react'
 import {Paper, TextField, Button, Alert, AlertTitle, Typography} from '@mui/material'
 import { useMediaQuery } from '@mui/material'
+import { Link } from 'react-router-dom'
 
 const Register = () => {
 
@@ -49,7 +50,7 @@ const Register = () => {
     }
 
     return (
-        <div>
+        <div className='h-screen'>
              { confirmReg ?
             <Alert severity="success" className="w-6/12 mx-auto my-5">
                 <AlertTitle>Success!</AlertTitle>
@@ -78,8 +79,12 @@ const Register = () => {
                 <TextField id="outlined-basic" label="Confirm Password" variant="outlined" type="password" name="confirmPassword" value={user.confirmPassword} onChange={onChangeHandler}/>
                 }
                 { confirmReg?
-                <Button disabled variant="contained" type="submit" >Login</Button>:
-                <Button variant="contained" type="submit" >Login</Button>
+                <Button disabled variant="contained" type="submit" >Register</Button>:
+                <div className='w-full flex flex-col gap-2'>
+
+                    <Button variant="contained" type="submit" >Register</Button>
+                    <Link to="/login" className='w-full'><Button fullWidth variant='contained'>Log In!</Button></Link>
+                </div>
                 }
                 </form>
             </div>

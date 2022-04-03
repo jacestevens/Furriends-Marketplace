@@ -69,7 +69,7 @@ const Navigation = () => {
                 <Link to="/Products/Dogs">Dog Essentials</Link>
                 <Link to="/Products/Cats">Cat Essentials</Link>
               </div>
-              <div>
+              <div className="flex flex-row">
                 {userId ? (
                   <div className="flex flex-row gap-3 ">
                     <Logout />
