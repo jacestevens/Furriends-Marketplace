@@ -18,7 +18,7 @@ import { Link } from "react-router-dom";
 
 
 const Home = () => {
-  const isMobile = useMediaQuery("(min-width:600px)");
+  const isMobile = useMediaQuery('(min-width:1024px)')
 
   return (
     <Box>

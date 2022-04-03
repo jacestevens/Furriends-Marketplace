@@ -23,7 +23,7 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 
 const Navigation = () => {
   const { userInfo, setuserId, userId, cart, setCartItems, cartItems } = useContext(GlobalContext);
-  const isMobile = useMediaQuery("(min-width:600px)");
+  const isMobile = useMediaQuery("(min-width:1024px)");
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
   const handleClick = (event) => {

@@ -6,12 +6,14 @@ import { Paper, Typography, CardActions, CardContent, Button, CardActionArea, Ca
 import { Link } from 'react-router-dom'
 import Form from './Form'
 import DeleteButton from './DeleteButton'
-
+import { useMediaQuery } from '@mui/material'
 const EditProduct = () => {
 
     const {id} = useParams()
     // const [editProduct, seteditProduct] = useState({})
     const navigate = useNavigate()
+
+    const isMobile = useMediaQuery('(min-width:1024px)')
     const [editProduct, setEditProduct] = useState({
 
         
@@ -53,7 +55,7 @@ const EditProduct = () => {
 
     return (
 
-        <div className="flex flex-row items-center gap-5 p-10">
+        <div className={ isMobile ? "flex flex-row items-center gap-5 p-10" : "flex flex-col items-center gap-5 p-10" }>
             <div>
                 
                             <div key={editProduct._id}>

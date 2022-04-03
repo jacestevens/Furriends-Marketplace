@@ -17,8 +17,8 @@ const DeleteButton = ({productId}) => {
     }
 
     return (
-        <div>
-            <Button variant="contained" color='error' sx={{ width: 160}} onClick={deleteHandler}>Delete</Button>
+        <div className='w-full'>
+            <Button variant="contained" color='error'  fullWidth onClick={deleteHandler}>Delete</Button>
         </div>
     )
 }

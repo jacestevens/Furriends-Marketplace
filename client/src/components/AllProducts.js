@@ -6,11 +6,12 @@ import { Link } from 'react-router-dom';
 import { GlobalContext } from '../contexts/GlobalContext';
 import {motion} from 'framer-motion'
 import { useMediaQuery } from '@mui/material';
+import AddToCart from './AddToCart';
 
 const AllProducts = () => {
 
     const {productList, setProductList} = useContext(GlobalContext)
-    const isMobile = useMediaQuery('(min-width:600px)')
+    const isMobile = useMediaQuery('(min-width:1024px)')
 
     useEffect(() => {
         axios.get("http://localhost:8000/api/Products")
@@ -63,8 +64,8 @@ const AllProducts = () => {
                                     {product.productPrice}
                                 </Typography>
                                 </div>
-                                <CardActions className="flex flex-col gap-1">
-                                    <Button variant="contained" fullWidth  sx={{background: "black", padding: 1, width:"20rem"}}>Add To Cart</Button>
+                                <CardActions className="flex flex-col gap-1 w-full">
+                                    <AddToCart ProductAdded={product} />
                                 </CardActions> 
                             </CardContent>
                             </Card>

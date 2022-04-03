@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Button, Paper, TextField,  MenuItem, TextareaAutosize, FormControl, InputLabel } from '@mui/material';
 import Select from '@mui/material/Select'
-
+import { useMediaQuery } from '@mui/material';
 
 
 const Form = ({submitHandler, Product, setProduct, Errors, EditProduct, setEditProduct}) => {
@@ -18,13 +18,13 @@ const Form = ({submitHandler, Product, setProduct, Errors, EditProduct, setEditP
         setSelectDisplay(e.target.value)
 
     }
-
+    const isMobile = useMediaQuery('(min-width:1024px)')
     return (
 
-        <div >
+        <div className={isMobile ? 'w-full': 'w-full'}>
         <div className=" my-2 mx-auto text-2xl">
             
-                <form className=" w-11/12 my-5 mx-auto flex flex-col justify-between gap-5 p-5" onSubmit={submitHandler}>
+                <form className="w-full my-5 mx-auto flex flex-col justify-between gap-5 p-2" onSubmit={submitHandler}>
                     <TextField id="outlined-basic" label="Product Name" variant="outlined" type="text" name="productName" value={Product.productName} onChange={onChangeHandler}/>
                     <TextField id="outlined-basic" label="Product Price" variant="outlined" type="text" name="productPrice" value={Product.productPrice}  onChange={onChangeHandler}/>
                     <TextField id="outlined-basic" label="Main Image" variant="outlined" type="text" name="productPhoto" onChange={onChangeHandler}/>

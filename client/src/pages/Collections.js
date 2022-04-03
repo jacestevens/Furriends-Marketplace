@@ -14,7 +14,7 @@ const Collections = () => {
 
     const {productList, setProductList, profileInfo, setCart, cart} = useContext(GlobalContext)
     const [filteredList, setfilteredList] = useState('')
-    const isMobile = useMediaQuery('(min-width:600px)')
+    const isMobile = useMediaQuery('(min-width:1024px)')
 
     
 

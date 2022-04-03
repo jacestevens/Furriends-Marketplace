@@ -22,7 +22,7 @@ import { ProductImages } from "../components/ProductImages";
 const OneProduct = () => {
   const { id } = useParams();
   const [product, setProduct] = useState({});
-  const isMobile = useMediaQuery("(min-width:720px)");
+  const isMobile = useMediaQuery('(min-width:1024px)')
 
   useEffect(() => {
     axios
@@ -73,12 +73,11 @@ const OneProduct = () => {
                   {product.productPrice}
                 </Typography>
               </div>
-              <div className="flex justify-between">
+              <div className="flex flex-row justify-between w-full">
                 <span>⭐️⭐️⭐️⭐️⭐️</span>{" "}
                 <span className=" text-lg">{`${reviewsCount(
                   100
                 )} Reviews`}</span>
-                <p></p>
               </div>
               <div className="mt-5">
                 <Button variant="contained" fullWidth>

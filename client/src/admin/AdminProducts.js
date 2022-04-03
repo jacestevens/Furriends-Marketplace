@@ -10,7 +10,7 @@ import { useMediaQuery } from '@mui/material'
 const AdminProducts = () => {
 
     const {userProducts, setUserProducts, userId, userInfo} = useContext(GlobalContext)
-    const isMobile = useMediaQuery('(min-width:600px)')
+    const isMobile = useMediaQuery('(min-width:1024px)')
 
     useEffect(() => {
 
@@ -24,7 +24,8 @@ const AdminProducts = () => {
     }, [setUserProducts, userId])
 
     return (
-        <div className="flex flex-row gap-7 ">
+        <div className={isMobile ?"flex flex-wrap gap-3" : "flex flex-wrap gap-2 justify-center items-center"}>
+
             
            
             {
@@ -33,7 +34,8 @@ const AdminProducts = () => {
                             <div key={product._id}>
                                 <Card 
                                 sx={{
-                                    maxWidth: 500
+                                    minWidth:350,
+                                    maxWidth: 400
                                 }}
                                 elevation = {5}
                                 >
@@ -56,8 +58,8 @@ const AdminProducts = () => {
                                             {product.productPrice}
                                         </Typography>
                                     </div>
-                                    <CardActions className="flex flex-col gap-1 items-center">
-                                        <Button variant="contained"  sx={{ width: 160}}><Link to={`edit-product/${product._id}`}>Edit</Link></Button>
+                                    <CardActions className="flex flex-col gap-1 items-center w-full">
+                                        <Button variant="contained" fullWidth ><Link to={`edit-product/${product._id}`}>Edit</Link></Button>
                                         <DeleteButton productId = {product._id}/>
                                     </CardActions> 
                                 </CardContent>
